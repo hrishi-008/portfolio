@@ -61,8 +61,16 @@ const About: React.FC = () => {
             className="relative"
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 p-1">
-              <div className="w-full h-full bg-gray-100 rounded-xl flex items-center justify-center">
-                <span className="text-gray-500">Your Image Here</span>
+              <div className="w-full h-full bg-gray-100 rounded-xl overflow-hidden">
+                <img 
+                  src="/images/image (3).jpg" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://via.placeholder.com/400x400?text=Profile+Image';
+                  }}
+                />
               </div>
             </div>
           </motion.div>
