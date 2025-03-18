@@ -2,18 +2,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
+  const skills = [
+    { name: 'Python', level: 90 },
+    { name: 'React', level: 85 },
+    { name: 'Node.js', level: 80 },
+    { name: 'SQL', level: 85 },
+    { name: 'Machine Learning', level: 90 },
+    { name: 'Deep Learning', level: 85 },
+    { name: 'LangChain', level: 90 },
+    { name: 'Docker', level: 80 },
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-20 h-1 bg-primary-color mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -22,34 +33,36 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-6"
           >
-            <p className="text-gray-600 leading-relaxed">
-            I'm an <em>AI enthusiast</em>, <em>product thinker</em>, and a <em>problem solver</em> with a passion for building impactful solutions at the intersection of technology and business. With hands-on experience in machine learning, natural language processing, and cloud-based AI systems, I thrive on transforming complex ideas into scalable products.
+            <div className="glass-effect rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
+              <p className="text-gray-600 mb-4">
+                I am an AI Engineer and Full Stack Developer with a passion for creating innovative solutions
+                using cutting-edge technologies. My expertise lies in developing scalable applications,
+                implementing machine learning models, and building robust web applications.
+              </p>
+              <p className="text-gray-600">
+                With a strong foundation in both front-end and back-end development, I specialize in
+                creating seamless user experiences while ensuring high performance and security.
+              </p>
+            </div>
 
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-            Over time, I've developed projects ranging from AI-enabled web search platforms to Natural Language to SQL pipelines, and even experimented with LLM fine-tuning, vector databases, and RAG-based architectures. My work extends into deploying models efficiently, understanding system design, and diving deep into finance and tech — a space I’m genuinely passionate about.
-            <br></br>
-            <br></br>
-            I love leading teams, owning processes, and brainstorming ideas that evolve into real-world products. Whether it’s exploring cloud and DevOps, or fine-tuning LLMs for production, I’m always curious, always learning, and always building.
-            <br></br>
-            <br></br>
-            Currently, I’m exploring the limitless potential of AI in sales automation, newsletter personalization, and enterprise search systems — constantly pushing myself toward that sweet spot where tech meets business value.
-            Let’s build something impactful.
-            </p>
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">My Skills Include:</h3>
-              <div className="flex flex-wrap gap-3">
-                {['React', 'TypeScript', 'Node.js', 'Python', 'SQL', 'AWS'].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+            <div className="grid grid-cols-2 gap-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="glass-effect rounded-xl p-4 shadow-lg"
+              >
+                <div className="text-3xl font-bold text-primary-color mb-2">2+</div>
+                <div className="text-gray-600">Years Experience</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="glass-effect rounded-xl p-4 shadow-lg"
+              >
+                <div className="text-3xl font-bold text-primary-color mb-2">20+</div>
+                <div className="text-gray-600">Projects Completed</div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -58,19 +71,53 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="space-y-6"
           >
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 p-1">
-              <div className="w-full h-full bg-gray-100 rounded-xl overflow-hidden">
-                <img 
-                  src="/images/image (3).jpg" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://via.placeholder.com/400x400?text=Profile+Image';
-                  }}
-                />
+            <div className="glass-effect rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Skills</h3>
+              <div className="space-y-4">
+                {skills.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex justify-between mb-1">
+                      <span className="text-gray-700 font-medium">{skill.name}</span>
+                      <span className="text-gray-500">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-primary-color h-2 rounded-full"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-effect rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Education</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-primary-color/10 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">Bachelor of Technology</h4>
+                    <p className="text-gray-600">Computer Science & Engineering</p>
+                    <p className="text-sm text-gray-500">2020 - 2024</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

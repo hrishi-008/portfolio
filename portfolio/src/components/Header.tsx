@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = [
     { title: 'Home', link: 'home' },
@@ -14,30 +23,49 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-gray-800">Portfolio</div>
-          
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'py-4' : 'py-6'
+      }`}
+      style={{
+        background: isScrolled
+          ? 'rgba(255, 255, 255, 0.8)'
+          : 'transparent',
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none',
+      }}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-2xl font-bold text-gradient"
+          >
+            hrishk
+          </motion.div>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
-              <Link
+              <motion.a
                 key={item.link}
-                to={item.link}
-                smooth={true}
-                duration={500}
-                className="text-gray-600 hover:text-gray-900 cursor-pointer"
+                href={`#${item.link}`}
+                whileHover={{ y: -2 }}
+                className="text-gray-600 hover:text-primary-color transition-colors duration-300 relative group"
               >
                 {item.title}
-              </Link>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-color transition-all duration-300 group-hover:w-full"></span>
+              </motion.a>
             ))}
-          </div>
+          </nav>
 
-          {/* Mobile Navigation Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
+          {/* Mobile Menu Button */}
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            className="md:hidden text-gray-600 hover:text-primary-color transition-colors duration-300"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
               className="w-6 h-6"
@@ -45,7 +73,7 @@ const Header: React.FC = () => {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              {isOpen ? (
+              {isMenuOpen ? (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -61,28 +89,36 @@ const Header: React.FC = () => {
                 />
               )}
             </svg>
-          </button>
+          </motion.button>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="md:hidden mt-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.link}
-                to={item.link}
-                smooth={true}
-                duration={500}
-                className="block py-2 text-gray-600 hover:text-gray-900 cursor-pointer"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.title}
-              </Link>
-            ))}
-          </div>
-        )}
-      </nav>
-    </header>
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-4"
+            >
+              <nav className="flex flex-col space-y-4">
+                {menuItems.map((item) => (
+                  <motion.a
+                    key={item.link}
+                    href={`#${item.link}`}
+                    whileHover={{ x: 10 }}
+                    className="text-gray-600 hover:text-primary-color transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.title}
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.header>
   );
 };
 
