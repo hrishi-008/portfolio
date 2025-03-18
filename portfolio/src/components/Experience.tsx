@@ -48,8 +48,8 @@ const experiences: Experience[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-gray-100 to-gray-200">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-20 relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

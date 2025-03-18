@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   const skills = [
     { name: 'Python', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'Node.js', level: 80 },
-    { name: 'SQL', level: 85 },
-    { name: 'Machine Learning', level: 90 },
-    { name: 'Deep Learning', level: 85 },
+    { name: 'AI Frameworks', level: 85 },
+    { name: 'SQL', level: 70 },
+    { name: 'Machine Learning', level: 75 },
+    { name: 'Deep Learning', level: 75 },
     { name: 'LangChain', level: 90 },
-    { name: 'Docker', level: 80 },
+    { name: 'Docker', level: 60 },
+    { name: 'Git', level: 50 },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,30 +38,39 @@ const About: React.FC = () => {
             <div className="glass-effect rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
               <p className="text-gray-600 mb-4">
-                I am an AI Engineer and Full Stack Developer with a passion for creating innovative solutions
-                using cutting-edge technologies. My expertise lies in developing scalable applications,
-                implementing machine learning models, and building robust web applications.
+                I'm an <em>AI enthusiast</em>, <em>product thinker</em>, and a <em>problem solver</em> with a passion for building impactful solutions at the intersection of technology and business. With hands-on experience in machine learning, natural language processing, and cloud-based AI systems, I thrive on transforming complex ideas into scalable products.
               </p>
-              <p className="text-gray-600">
-                With a strong foundation in both front-end and back-end development, I specialize in
-                creating seamless user experiences while ensuring high performance and security.
+              <p className="text-gray-600 leading-relaxed">
+                Over time, I've developed projects ranging from AI-enabled web search platforms to Natural Language to SQL pipelines, and even experimented with LLM fine-tuning, vector databases, and RAG-based architectures. My work extends into deploying models efficiently, understanding system design, and diving deep into finance and tech — a space I'm genuinely passionate about.
+                <br></br>
+                <br></br>
+                I love leading teams, owning processes, and brainstorming ideas that evolve into real-world products. Whether it's exploring cloud and DevOps, or fine-tuning LLMs for production, I'm always curious, always learning, and always building.
+                <br></br>
+                <br></br>
+                Currently, I'm exploring the limitless potential of AI in sales automation, newsletter personalization, and enterprise search systems — constantly pushing myself toward that sweet spot where tech meets business value. Let's build something impactful.
               </p>
             </div>
-
             <div className="grid grid-cols-2 gap-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="glass-effect rounded-xl p-4 shadow-lg"
               >
-                <div className="text-3xl font-bold text-primary-color mb-2">2+</div>
+                <div className="text-3xl font-bold text-primary-color mb-2">1+</div>
                 <div className="text-gray-600">Years Experience</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="glass-effect rounded-xl p-4 shadow-lg"
               >
-                <div className="text-3xl font-bold text-primary-color mb-2">20+</div>
-                <div className="text-gray-600">Projects Completed</div>
+                <div className="text-3xl font-bold text-primary-color mb-2">6+</div>
+                <div className="text-gray-600">Production Deployments</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="glass-effect rounded-xl p-4 shadow-lg"
+              >
+                <div className="text-3xl font-bold text-primary-color mb-2">3+</div>
+                <div className="text-gray-600">Personal Projects</div>
               </motion.div>
             </div>
           </motion.div>
@@ -77,27 +86,18 @@ const About: React.FC = () => {
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Skills</h3>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
+                  <div key={skill.name}>
                     <div className="flex justify-between mb-1">
                       <span className="text-gray-700 font-medium">{skill.name}</span>
                       <span className="text-gray-500">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        viewport={{ once: true }}
+                      <div 
                         className="bg-primary-color h-2 rounded-full"
+                        style={{ width: `${skill.level}%` }}
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
