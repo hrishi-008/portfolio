@@ -14,11 +14,11 @@ const Header: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { title: 'Home', link: 'home' },
+    { title: 'Home', link: 'hero' },
     { title: 'About', link: 'about' },
     { title: 'Projects', link: 'projects' },
     { title: 'Experience', link: 'experience' },
-    // { title: 'Skills', link: 'skills' },
+    { title: 'Certifications', link: 'certifications' },
     { title: 'Contact', link: 'contact' },
   ];
 

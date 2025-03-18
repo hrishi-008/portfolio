@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   const skills = [
-    { name: 'Python', level: 90 },
-    { name: 'AI Frameworks', level: 85 },
-    { name: 'SQL', level: 70 },
-    { name: 'Machine Learning', level: 75 },
-    { name: 'Deep Learning', level: 75 },
-    { name: 'LangChain', level: 90 },
-    { name: 'Docker', level: 60 },
-    { name: 'Git', level: 50 },
+    { name: 'Python', level: 90, color: '#4B8BBE' },
+    { name: 'AI Frameworks', level: 85, color: '#FF6B6B' },
+    // { name: 'LangChain', level: 90, color: '#61DAFB' },
+    { name: 'Machine Learning', level: 75, color: '#38B2AC' },
+    { name: 'Deep Learning', level: 75, color: '#805AD5' },
+    { name: 'Cloud', level: 60, color: '#4299E1' },
+    { name: 'Docker', level: 60, color: '#2496ED' },
+    { name: 'Git', level: 50, color: '#F05032' },
+    { name: 'SQL', level: 50, color: '#F29111' },
   ];
 
   return (
@@ -38,14 +39,13 @@ const About: React.FC = () => {
             <div className="glass-effect rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
               <p className="text-gray-600 mb-4">
-                I'm an <em>AI enthusiast</em>, <em>product thinker</em>, and a <em>problem solver</em> with a passion for building impactful solutions at the intersection of technology and business. With hands-on experience in machine learning, natural language processing, and cloud-based AI systems, I thrive on transforming complex ideas into scalable products.
+                I'm an <span className="text-primary-color font-bold">AI enthusiast</span>, <span className="text-primary-color font-bold">product thinker</span>, and a <span className="text-primary-color font-bold">problem solver</span> with a passion for building impactful solutions at the intersection of technology and business. With hands-on experience in <span className="underline decoration-primary-color">machine learning</span>, <span className="underline decoration-primary-color">natural language processing</span>, and <span className="underline decoration-primary-color">cloud-based AI systems</span>, I thrive on transforming complex ideas into scalable products.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Over time, I've developed projects ranging from AI-enabled web search platforms to Natural Language to SQL pipelines, and even experimented with LLM fine-tuning, vector databases, and RAG-based architectures. My work extends into deploying models efficiently, understanding system design, and diving deep into finance and tech — a space I'm genuinely passionate about.
+                Over time, I've developed projects ranging from AI-enabled web search platforms to Natural Language to SQL pipelines, and even experimented with LLM fine-tuning, vector databases, and RAG-based architectures. My work extends into deploying models efficiently, and diving deep into <em>finance and tech</em> — a space I'm genuinely passionate about.
                 <br></br>
                 <br></br>
                 I love leading teams, owning processes, and brainstorming ideas that evolve into real-world products. Whether it's exploring cloud and DevOps, or fine-tuning LLMs for production, I'm always curious, always learning, and always building.
-                <br></br>
                 <br></br>
                 Currently, I'm exploring the limitless potential of AI in sales automation, newsletter personalization, and enterprise search systems — constantly pushing myself toward that sweet spot where tech meets business value. Let's build something impactful.
               </p>
@@ -69,7 +69,7 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 className="glass-effect rounded-xl p-4 shadow-lg"
               >
-                <div className="text-3xl font-bold text-primary-color mb-2">3+</div>
+                <div className="text-3xl font-bold text-primary-color mb-2">10+</div>
                 <div className="text-gray-600">Personal Projects</div>
               </motion.div>
             </div>
@@ -93,8 +93,8 @@ const About: React.FC = () => {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-primary-color h-2 rounded-full"
-                        style={{ width: `${skill.level}%` }}
+                        className="h-2 rounded-full"
+                        style={{ width: `${skill.level}%`, backgroundColor: skill.color }}
                       />
                     </div>
                   </div>
@@ -115,7 +115,7 @@ const About: React.FC = () => {
                   <div>
                     <h4 className="font-semibold text-gray-800">Bachelor of Technology</h4>
                     <p className="text-gray-600">Computer Science & Engineering</p>
-                    <p className="text-sm text-gray-500">2020 - 2024</p>
+                    <p className="text-sm text-gray-500">2021 - 2025</p>
                   </div>
                 </div>
               </div>

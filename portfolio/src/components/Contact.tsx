@@ -6,13 +6,13 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
+    // Initialize EmailJS with your public key
     emailjs.init({
       publicKey: "Tx88GVP56aVx83867"
     });
@@ -28,16 +28,16 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setStatus('loading');
     setErrorMessage('');
 
     try {
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+        name: formData.name,
+        email: formData.email,
         message: formData.message,
-        to_name: 'Hrishikesh'
+        // to_email: 'hackathon.hrishi@gmail.com',
+        cc: formData.email
       };
 
       const response = await emailjs.send(
@@ -47,15 +47,13 @@ const Contact: React.FC = () => {
       );
 
       if (response.status === 200) {
-        setSubmitStatus('success');
+        setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setStatus('error');
       setErrorMessage('Failed to send message. Please try again.');
       console.error('Error sending email:', error);
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -92,7 +90,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Email</h4>
-                    <p className="text-gray-600">hrishikesh@example.com</p>
+                    <p className="text-gray-600">hackathon.hrishi@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -104,18 +102,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Location</h4>
-                    <p className="text-gray-600">Mumbai, India</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-color/10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Phone</h4>
-                    <p className="text-gray-600">+91 1234567890</p>
+                    <p className="text-gray-600">Gandhinagar, Gujarat, India</p>
                   </div>
                 </div>
               </div>
@@ -127,7 +114,7 @@ const Contact: React.FC = () => {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://github.com/yourusername"
+                  href="https://github.com/hrishi-008"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary-color transition-colors"
@@ -139,7 +126,7 @@ const Contact: React.FC = () => {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/hrishk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary-color transition-colors"
@@ -151,7 +138,7 @@ const Contact: React.FC = () => {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://twitter.com/yourusername"
+                  href="https://twitter.com/hrrrriiiishhhhh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary-color transition-colors"
@@ -221,10 +208,10 @@ const Contact: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={isSubmitting}
-                className={`w-full btn btn-primary ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                disabled={status === 'loading'}
+                className={`w-full btn btn-primary ${status === 'loading' ? 'opacity-75 cursor-not-allowed' : ''}`}
               >
-                {isSubmitting ? (
+                {status === 'loading' ? (
                   <span className="flex items-center justify-center">
                     <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -238,7 +225,7 @@ const Contact: React.FC = () => {
               </motion.button>
             </form>
 
-            {submitStatus === 'success' && (
+            {status === 'success' && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -248,7 +235,7 @@ const Contact: React.FC = () => {
               </motion.div>
             )}
 
-            {submitStatus === 'error' && (
+            {status === 'error' && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

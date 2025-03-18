@@ -11,28 +11,28 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "AI Engineer",
+    title: "AI Engineer Intern",
     company: "Paperchase India Pvt. Ltd.",
-    period: "December 2024 - Present",
+    period: "Dec'24 - Present",
     description: [
       "Developed a fine-tuned LLM for seamless NL2SQL conversion, enhancing database interaction.",
       "Benchmarked data for querying using LLM for enterprise clients, optimizing performance and response times.",
-      "Queried and processed large-scale databases with 30+ lakh (3M+) rows and multi-GB data, ensuring efficient retrieval and analysis.",
+      "Queried and processed large-scale databases with 30+ lakh (3M+) rows and multi-GB data, ensuring efficient retrieval and analysis using SQL servers as knowledge base for LLM.",
       "Built a plug-and-play AI pipeline using LangGraph, allowing seamless integration of any database as a knowledge base.",
       "Designed modular compatibility to support any LLM for SQL query generation and processing using LangGraph."
     ],
     technologies: ["Ollama", "LangChain", "LangGraph", "Transformers", "LoRA", "QLoRA", "Unsloth", "Python", "SQL"]
   },
   {
-    title: "AI / ML Intern",
+    title: "AI/ML Intern",
     company: "PGAGI",
-    period: "May 2024 - August 2024",
+    period: "May'24 - Aug'24 ",
     description: [
-      "Developed an AI-powered Retrieval-Augmented Generation (RAG) system using LangChain, OpenAI, and FAISS, responsible for upselling products to clients.",
-      "Deployed and maintained custom software on Google Cloud Platform, using docker containerisation.",
-      "Developed a custom AI text generator using DSPy and OpenAI, producing YouTube and Instagram scripts for clients."
+      "Developed an AI-powered Retrieval-Augmented Generation (RAG) system using LangChain, OpenAI, and FAISS, responsible for upselling products to clients. The system improved customer engagement and decision-making, leading to an 11% increase in sales. The project was efficiently hosted on Google Cloud Platform's Run service for seamless scalability.",
+      "Deployed and maintained custom software on Google Cloud Platform, using docker containerisation. Utilized the Google Cloud CLI for streamlined management of docker images. Managed the image versions using the Google Artifact Repositories. Deployed the docker images on the Google Cloud Run platform.",
+      "Developed a custom AI text generator using DSPy and OpenAI, producing YouTube and Instagram scripts for clients. This system enhanced content quality, improving viewer retention by nearly 30%. This project also included prompt engineering and few shot prompting for LLMs."
     ],
-    technologies: ["RAG", "LangChain", "LangGraph", "OpenAI", "FAISS", "Docker", "GCP", "Python", "Google Cloud CLI"]
+    technologies: ["RAG", "LangChain","OpenAI", "FAISS", "Docker", "GCP", "Google Cloud CLI"]
   },
   {
     title: "Summer Intern",
@@ -62,6 +62,40 @@ const Experience: React.FC = () => {
         </motion.div>
 
         <div className="relative">
+          {/* Decorative weaving lines */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path
+                d="M0,20 Q25,0 50,20 T100,20"
+                stroke="rgba(var(--primary-color-rgb), 0.1)"
+                strokeWidth="0.5"
+                fill="none"
+                className="animate-draw"
+              />
+              <path
+                d="M0,40 Q75,20 100,40"
+                stroke="rgba(var(--primary-color-rgb), 0.1)"
+                strokeWidth="0.5"
+                fill="none"
+                className="animate-draw"
+              />
+              <path
+                d="M0,60 Q25,80 50,60 T100,60"
+                stroke="rgba(var(--primary-color-rgb), 0.1)"
+                strokeWidth="0.5"
+                fill="none"
+                className="animate-draw"
+              />
+              <path
+                d="M0,80 Q75,60 100,80"
+                stroke="rgba(var(--primary-color-rgb), 0.1)"
+                strokeWidth="0.5"
+                fill="none"
+                className="animate-draw"
+              />
+            </svg>
+          </div>
+
           {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
 
@@ -79,6 +113,14 @@ const Experience: React.FC = () => {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-color rounded-full z-10 shadow-lg"></div>
+
+                {/* Thread connectors */}
+                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-primary-color/50 to-transparent ${
+                  index % 2 === 0 ? 'top-full' : 'bottom-full'
+                }`}></div>
+                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-transparent to-primary-color/50 ${
+                  index % 2 === 0 ? 'bottom-full' : 'top-full'
+                }`}></div>
 
                 {/* Content */}
                 <div className={`w-full md:w-1/2 ${
