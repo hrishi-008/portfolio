@@ -99,15 +99,15 @@ const Header: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4"
+              className="md:hidden absolute left-0 right-0 top-full bg-white/95 backdrop-blur-md shadow-lg rounded-b-lg"
             >
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col space-y-4 p-4">
                 {menuItems.map((item) => (
                   <motion.a
                     key={item.link}
                     href={`#${item.link}`}
                     whileHover={{ x: 10 }}
-                    className="text-gray-600 hover:text-primary-color transition-colors duration-300"
+                    className="text-gray-600 hover:text-primary-color transition-colors duration-300 py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.title}
