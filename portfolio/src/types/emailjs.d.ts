@@ -10,7 +10,7 @@ declare module '@emailjs/browser' {
   }
 
   interface EmailJSStatic {
-    init(publicKey: string | { publicKey: string }): void;
+    init(publicKey: string): void;
     send(serviceId: string, templateId: string, templateParams: Record<string, any>): Promise<EmailJSResponse>;
   }
 

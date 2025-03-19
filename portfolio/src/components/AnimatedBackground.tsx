@@ -13,7 +13,7 @@ const AnimatedBackground: React.FC = () => {
           y: [0, 30, 0],
         }}
         transition={{
-          duration: 20,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -27,7 +27,7 @@ const AnimatedBackground: React.FC = () => {
           y: [0, -30, 0],
         }}
         transition={{
-          duration: 20,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
