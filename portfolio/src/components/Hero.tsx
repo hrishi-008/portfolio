@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center relative overflow-hidden pt-24 md:pt-32">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

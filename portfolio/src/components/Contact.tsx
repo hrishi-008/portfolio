@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
   useEffect(() => {
     // Initialize EmailJS with your public key
     emailjs.init({
-      publicKey: "Tx88GVP56aVx83867"
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     });
   }, []);
 
@@ -36,13 +36,12 @@ const Contact: React.FC = () => {
         name: formData.name,
         email: formData.email,
         message: formData.message,
-        // to_email: 'hackathon.hrishi@gmail.com',
         cc: formData.email
       };
 
       const response = await emailjs.send(
-        'service_portfolio',
-        'template_qvgmkdm',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
