@@ -13,9 +13,7 @@ const Contact: React.FC = () => {
 
   useEffect(() => {
     // Initialize EmailJS with your public key
-    emailjs.init({
-      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    });
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
