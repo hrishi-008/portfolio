@@ -39,7 +39,7 @@ const Certifications: React.FC = () => {
     {
       name: "Foundation of Project Management",
       issuer: "Google",
-      date: "2024",
+      date: "2025",
       link: "https://www.coursera.org/account/accomplishments/verify/A0HDC1MLO512",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ const Certifications: React.FC = () => {
     {
       name: "Introduction to DevOps",
       issuer: "IBM",
-      date: "2024",
+      date: "2025",
       link: "https://www.coursera.org/account/accomplishments/verify/RBBLH8W980HC",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,6 +58,29 @@ const Certifications: React.FC = () => {
         </svg>
       )
     },
+    {
+      name: "Introduction to Cloud Computing",
+      issuer: "IBM",
+      date: "2024",
+      link: "https://www.coursera.org/account/accomplishments/verify/WG4CRD4NPIHK",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M3 14h18m-9 4h9m-9-4H3m0-4h18m0-4H3m0-4h18M3 6h18" />
+        </svg>
+      )
+    },
+    {
+      name: "Getting Started with Git and GitHub",
+      issuer: "IBM",
+      date: "2024",
+      link: "https://www.coursera.org/account/accomplishments/verify/5RZNC0Y9JZKD",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l9 7-9 7-9-7 9-7zM12 22l9-7v-5l-9 7-9-7v5l9 7z" />
+        </svg>
+      )
+    },
+
   ];
 
   return (

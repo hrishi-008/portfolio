@@ -76,6 +76,19 @@ const Hero: React.FC = () => {
                 </svg>
                 Connect on LinkedIn
               </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                href="https://www.upwork.com/freelancers/~0114abe46f114f423f"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-[#1C1C1C]/10 text-[#5cb85c] border border-[#5cb85c]/20 rounded-lg font-medium hover:bg-[#1C1C1C]/20 transition-colors duration-300 flex items-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.13-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67h-3.56V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z" />
+                </svg>
+                Hire on Upwork
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -194,4 +207,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
