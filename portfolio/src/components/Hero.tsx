@@ -35,8 +35,8 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0"
             >
-              Passionate about creating innovative solutions using cutting-edge technologies.
-              Specialized in AI/ML, keen in cloud, and building scalable applications.
+              AI Engineer with hands-on experience developing, deploying and brainstorming production-grade RAG systems, fine-tuning LLMs, and building AI-powered pipelines. Passionate about building scalable, end-to-end AI products that solve real problems.
+
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

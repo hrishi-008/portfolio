@@ -15,11 +15,12 @@ const experiences: Experience[] = [
     company: "Paperchase India Pvt. Ltd.",
     period: "Dec'24 - Present",
     description: [
-      "Developed a fine-tuned LLM for seamless NL2SQL conversion, enhancing database interaction.",
-      "Benchmarked data for querying using LLM for enterprise clients, optimizing performance and response times.",
-      "Queried and processed large-scale databases with 30+ lakh (3M+) rows and multi-GB data, ensuring efficient retrieval and analysis using SQL servers as knowledge base for LLM.",
-      "Built a plug-and-play AI pipeline using LangGraph, allowing seamless integration of any database as a knowledge base.",
-      "Designed modular compatibility to support any LLM for SQL query generation and processing using LangGraph."
+      "Fine-tuned a custom LLM for seamless natural language to SQL (NL2SQL) conversion, streamlining enterprise data interaction.",
+      "Benchmarked LLM query performance across multi-GB SQL Server databases (3M+ rows) to optimize response times for analytics-heavy workloads (response time reduced to factor of seconds from minutes).",
+      "Engineered a plug-and-play AI pipeline using LangGraph to support modular database integration as LLM knowledge bases.",
+      "Built a plug-and-play fine-tuning framework specific to company hardware to finetune any supported open-source LLM (e.g., Mistral, LLaMA) using structured datasets in a defined schema.",
+      "Collaborated with the core AI team on ideation and architecture of AI-first product solutions from scratch.",
+      "Gained deep hands-on experience in both backend pipeline engineering and AI product lifecycle design."
     ],
     technologies: ["Ollama", "LangChain", "LangGraph", "Transformers", "LoRA", "QLoRA", "Unsloth", "Python", "SQL"]
   },
@@ -53,7 +54,7 @@ const Experience: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -105,7 +106,7 @@ const Experience: React.FC = () => {
                 key={exp.company}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 className={`relative flex items-center ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'

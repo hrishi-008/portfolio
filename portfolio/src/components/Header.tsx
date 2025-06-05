@@ -41,7 +41,13 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient"
+            className="text-2xl font-bold text-gradient cursor-pointer"
+            onClick={() => {
+              const heroSection = document.getElementById('hero');
+              if (heroSection) {
+                heroSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             hrishk
           </motion.div>
