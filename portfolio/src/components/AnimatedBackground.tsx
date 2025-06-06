@@ -27,7 +27,7 @@ const AnimatedBackground: React.FC = () => {
     }));
   };
 
-  const gridLines = generateGridLines(isMobile ? 8 : 20);
+  const gridLines = generateGridLines(isMobile ? 8 : 15);
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-blue-50 to-indigo-50">

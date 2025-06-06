@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       }`}
       style={{
         background: isScrolled
-          ? 'rgba(255, 255, 255, 0.8)'
+          ? 'rgba(255, 255, 255, 0.5)'
           : 'transparent',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none',

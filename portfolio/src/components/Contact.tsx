@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Location</h4>
-                    <p className="text-gray-600">Gandhinagar, Gujarat, India</p>
+                    <p className="text-gray-600">Ahmedabad, Gujarat, India</p>
                   </div>
                 </div>
               </div>
