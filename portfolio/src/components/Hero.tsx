@@ -19,7 +19,14 @@ const Hero: React.FC = () => {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               Hi, I'm{' '}
-              <span className="text-gradient">Hrishikesh</span>
+              <span className="relative">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Hrishikesh</span>
+                <motion.div
+                  className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-xl"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+              </span>
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -45,23 +52,23 @@ const Hero: React.FC = () => {
               className="flex flex-wrap gap-4 justify-center md:justify-start"
             >
               <motion.a
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 href="#contact"
-                className="px-6 py-3 bg-transparent text-primary-color border border-primary-color rounded-lg font-medium hover:bg-primary-color/5 transition-colors duration-300 flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200 flex items-center gap-2 h-[51px] w-[237px] justify-center"
               >
                 Get In Touch
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 href="#projects"
-                className="px-6 py-3 bg-transparent text-primary-color border border-primary-color rounded-lg font-medium hover:bg-primary-color/5 transition-colors duration-300 flex items-center gap-2"
+                className="px-6 py-3 bg-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 border border-blue-500/20 rounded-lg font-medium hover:bg-gradient-to-r hover:from-blue-500/5 hover:to-blue-800/100 transition-colors duration-200 flex items-center gap-2 h-[51px] w-[237px] justify-center"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                 </svg>
-                View Projects
+                <span className="text-center w-full">View Projects</span>
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -69,7 +76,7 @@ const Hero: React.FC = () => {
                 href="https://www.linkedin.com/in/hrishk/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-[#0077B5]/10 text-[#0077B5] border border-[#0077B5]/20 rounded-lg font-medium hover:bg-[#0077B5]/20 transition-colors duration-300 flex items-center gap-2"
+                className="px-6 py-3 bg-[#0077B5]/10 text-[#0077B5] border border-[#0077B5]/20 rounded-lg font-medium hover:bg-[#0077B5]/20 transition-colors duration-200 flex items-center gap-2 h-[51px] w-[237px] justify-center"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -82,7 +89,7 @@ const Hero: React.FC = () => {
                 href="https://www.upwork.com/freelancers/~0114abe46f114f423f"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-[#1C1C1C]/10 text-[#5cb85c] border border-[#5cb85c]/20 rounded-lg font-medium hover:bg-[#1C1C1C]/20 transition-colors duration-300 flex items-center gap-2"
+                className="px-6 py-3 bg-[#1C1C1C]/10 text-[#5cb85c] border border-[#5cb85c]/20 rounded-lg font-medium hover:bg-[#1C1C1C]/20 transition-colors duration-200 flex items-center gap-2 h-[51px] w-[237px] justify-center"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.13-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67h-3.56V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z" />

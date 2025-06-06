@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient cursor-pointer"
+            className="text-2xl font-bold text-gradient cursor-pointer relative group"
             onClick={() => {
               const heroSection = document.getElementById('hero');
               if (heroSection) {
@@ -49,7 +49,13 @@ const Header: React.FC = () => {
               }
             }}
           >
-            hrishk
+            <span className="relative z-10">hrishk</span>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={false}
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -59,10 +65,10 @@ const Header: React.FC = () => {
                 key={item.link}
                 href={`#${item.link}`}
                 whileHover={{ y: -2 }}
-                className="text-gray-600 hover:text-primary-color transition-colors duration-300 relative group"
+                className="text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 transition-colors duration-300 relative group"
               >
                 {item.title}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-color transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </nav>
