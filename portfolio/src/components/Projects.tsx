@@ -33,7 +33,7 @@ const projects: Project[] = [
     technologies: ["Spotify", "Python", "Selenium", "Spotipy", "BeautifulSoup"],
     image: "images/MelodyMigrate.jpg",
     // liveUrl: "https://chat-gemini-pro.streamlit.app/",
-    github: "https://github.com/hrishi-008/Chat-Gemini"
+    github: "https://github.com/hrishi-008/MelodyMigrate"
   },
   {
     title: "VideoChat",

@@ -50,7 +50,7 @@ const AnimatedBackground: React.FC = () => {
             [line.isHorizontal ? 'top' : 'left']: `${line.position}%`,
           }}
           animate={{
-            opacity: [0, 1, 0],
+            opacity: [0, 0.4, 0],
             [line.isHorizontal ? 'top' : 'left']: [
               `${line.position}%`,
               `${line.position + (line.isHorizontal ? 100 : -100)}%`,
