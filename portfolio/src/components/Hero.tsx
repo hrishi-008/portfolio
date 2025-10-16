@@ -42,8 +42,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0"
             >
-              AI Engineer with hands-on experience developing, deploying and brainstorming production-grade RAG systems, fine-tuning LLMs, and building AI-powered pipelines. Passionate about building scalable, end-to-end AI products that solve real problems.
-
+              I live in that sweet spot where AI, product, and chaos meet. I've built everything from RAG systems that actually work (not just sound fancy in decks) to scalable pipelines running on cloud infra that doesn't randomly catch fire. I think like a builder, move like a founding engineer, and talk like a PM who actually knows what's under the hood.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
