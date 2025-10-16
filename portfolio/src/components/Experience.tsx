@@ -11,34 +11,41 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "AI Engineer Intern",
-    company: "Paperchase India Pvt. Ltd.",
+    title: "AI Software Engineer",
+    company: "Paperchase",
     period: "Dec'24 - Present",
     description: [
+      "Broke down an AI-ML based monolithic service into microservices which reduced worker starvation and decreased response time to sub 12 seconds from 9 minutes. Containerized these micro services and hosted using AKS.",
+      "Drove end-to-end AI product development, from ideation and requirements gathering with non-technical stakeholders to solution deployment.",
+      "Optimized GPU utilization, resulting in over $3000 in savings on rental costs.",
+      "Developed and deployed an AI solution that saves 10 minutes daily for over 100 employees, significantly boosting productivity.",
+      "Created a generative AI product that ensures GDPR SLAs, serving over 800 users.",
+      "Operated within a lean, 'startup-like' AI team of three, building and deploying products for a 1000+ employee company.",
       "Fine-tuned a custom LLM for seamless natural language to SQL (NL2SQL) conversion, streamlining enterprise data interaction.",
-      "Benchmarked LLM query performance across multi-GB SQL Server databases (3M+ rows) to optimize response times for analytics-heavy workloads (response time reduced to factor of seconds from minutes).",
       "Engineered a plug-and-play AI pipeline using LangGraph to support modular database integration as LLM knowledge bases.",
       "Built a plug-and-play fine-tuning framework specific to company hardware to finetune any supported open-source LLM (e.g., Mistral, LLaMA) using structured datasets in a defined schema.",
-      "Collaborated with the core AI team on ideation and architecture of AI-first product solutions from scratch.",
-      "Gained deep hands-on experience in both backend pipeline engineering and AI product lifecycle design."
+      "Gained deep hands-on experience in both backend pipeline engineering and AI product lifecycle design.",
+      "Developing Dockerfiles and images for the deployment of AI products."
     ],
-    technologies: ["Ollama", "LangChain", "LangGraph", "Transformers", "LoRA", "QLoRA", "Unsloth", "Python", "SQL"]
+    technologies: ["LangGraph", "LangChain", "Ollama", "Transformers", "LoRA", "QLoRA", "Unsloth", "Python", "SQL", "Docker", "AKS"]
   },
   {
     title: "AI/ML Intern",
     company: "PGAGI",
-    period: "May'24 - Aug'24 ",
+    period: "May'24 - Aug'24",
     description: [
-      "Developed an AI-powered Retrieval-Augmented Generation (RAG) system using LangChain, OpenAI, and FAISS, responsible for upselling products to clients. The system improved customer engagement and decision-making, leading to an 11% increase in sales. The project was efficiently hosted on Google Cloud Platform's Run service for seamless scalability.",
-      "Deployed and maintained custom software on Google Cloud Platform, using docker containerisation. Utilized the Google Cloud CLI for streamlined management of docker images. Managed the image versions using the Google Artifact Repositories. Deployed the docker images on the Google Cloud Run platform.",
-      "Developed a custom AI text generator using DSPy and OpenAI, producing YouTube and Instagram scripts for clients. This system enhanced content quality, improving viewer retention by nearly 30%. This project also included prompt engineering and few shot prompting for LLMs."
+      "Built a Retrieval-Augmented Generation (RAG) pipeline using LangChain, OpenAI, and FAISS for a product recommendation use case—boosted client upsell rates by 11%.",
+      "Deployed the RAG system on Google Cloud Run using Docker containers, enabling cost-efficient, auto-scalable inference workflows.",
+      "Managed cloud infrastructure via Google Cloud CLI, Artifact Registry, and custom CI/CD flows for container versioning and zero-downtime rollouts.",
+      "Developed a custom AI text generator using DSPy and OpenAI, tailored for generating social media scripts (YouTube, Instagram), which led to a 30% increase in viewer retention.",
+      "Implemented prompt engineering and few-shot learning strategies to improve generation quality and style alignment."
     ],
-    technologies: ["RAG", "LangChain","OpenAI", "FAISS", "Docker", "GCP", "Google Cloud CLI"]
+    technologies: ["LangChain", "FAISS", "OpenAI", "DSPy", "Docker", "Google Cloud Platform", "Cloud Run", "Artifact Registry", "Prompt Engineering"]
   },
   {
     title: "Summer Intern",
-    company: "Reliance Industries Ltd.",
-    period: "June 2023 - July 2023",
+    company: "Reliance Industries Limited",
+    period: "Jun - Jul'23",
     description: [
       "Developed DCMS (Data Center Management Service), an employee portal using HTML, CSS, and MySQL.",
       "Optimized database queries and integrated several .NET APIs for enhanced functionality and performance."

@@ -4,14 +4,13 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   const skills = [
     { name: 'Python', level: 90, color: '#4B8BBE' },
-    { name: 'AI Frameworks', level: 85, color: '#FF6B6B' },
-    // { name: 'LangChain', level: 90, color: '#61DAFB' },
-    { name: 'Machine Learning', level: 75, color: '#38B2AC' },
-    { name: 'Deep Learning', level: 75, color: '#805AD5' },
-    { name: 'Cloud', level: 60, color: '#4299E1' },
-    { name: 'Docker', level: 60, color: '#2496ED' },
-    { name: 'Git', level: 50, color: '#F05032' },
-    { name: 'SQL', level: 50, color: '#F29111' },
+    { name: 'LangChain/LangGraph', level: 90, color: '#61DAFB' },
+    { name: 'Machine Learning', level: 85, color: '#38B2AC' },
+    { name: 'Docker', level: 80, color: '#2496ED' },
+    { name: 'Cloud (GCP/Azure)', level: 75, color: '#4299E1' },
+    { name: 'SQL', level: 75, color: '#F29111' },
+    { name: 'Transformers/LoRA', level: 75, color: '#FF6B6B' },
+    { name: 'DevOps', level: 70, color: '#805AD5' },
   ];
 
   return (
@@ -39,15 +38,13 @@ const About: React.FC = () => {
             <div className="glass-effect rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
               <p className="text-gray-600 mb-4">
-                I'm an <span className="text-primary-color font-bold">AI enthusiast</span>, <span className="text-primary-color font-bold">product thinker</span>, and a <span className="text-primary-color font-bold">problem solver</span> with a passion for building impactful solutions at the intersection of technology and business. With hands-on experience in <span className="underline decoration-primary-color">machine learning</span>, <span className="underline decoration-primary-color">natural language processing</span>, and <span className="underline decoration-primary-color">cloud-based AI systems</span>, I thrive on transforming complex ideas into scalable products.
+                I live in that sweet spot where AI, product, and chaos meet. I've built everything from RAG systems that actually work (not just sound fancy in decks) to scalable pipelines running on cloud infra that doesn't randomly catch fire. I think like a builder, move like a founding engineer, and talk like a PM who actually knows what's under the hood.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Over time, I've developed projects ranging from AI-enabled web search platforms to Natural Language to SQL pipelines, and even experimented with LLM fine-tuning, vector databases, and RAG-based architectures. My work extends into deploying models efficiently, and diving deep into <em>finance and tech</em> — a space I'm genuinely passionate about.
+                I love owning problems end-to-end — strategy, architecture, shipping, feedback loops — all of it. Whether it's leading from the front or building in the trenches, I'm obsessed with turning wild ideas into real products.
                 <br></br>
                 <br></br>
-                I love leading teams, owning processes, and brainstorming ideas that evolve into real-world products. Whether it's exploring cloud and DevOps, or fine-tuning LLMs for production, I'm always curious, always learning, and always building.
-                <br></br>
-                Currently, I'm exploring the limitless potential of AI in sales automation, newsletter personalization, and enterprise search systems — constantly pushing myself toward that sweet spot where tech meets business value. Let's build something impactful.
+                TL;DR: I can ship fast, think long-term, and make sure AI isn't just "cool" but actually useful.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
