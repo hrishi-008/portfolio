@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
               className="text-2xl font-bold text-gradient cursor-pointer relative group"
               onClick={handleLogoClick}
             >
-              <span className="relative z-10 font-display tracking-tight">hrishk</span>
+              <span className="relative z-10 text-black font-display tracking-tight">hrishk</span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={false}
