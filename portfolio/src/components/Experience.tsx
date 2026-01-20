@@ -15,19 +15,20 @@ const experiences: Experience[] = [
     company: "Paperchase",
     period: "Dec'24 - Present",
     description: [
-      "Broke down an AI-ML based monolithic service into microservices which reduced worker starvation and decreased response time to sub 12 seconds from 9 minutes. Containerized these micro services and hosted using AKS.",
+      "Engineered a scalable AI microservices architecture to process financial documents, reducing response time from 9 minutes to sub-12 seconds (98% reduction) for Accountancy Operations.",
+      "Awarded 'AI Champions' for leading cross-functional teams in identifying operational bottlenecks and deploying AI solutions.",
       "Drove end-to-end AI product development, from ideation and requirements gathering with non-technical stakeholders to solution deployment.",
       "Optimized GPU utilization, resulting in over $3000 in savings on rental costs.",
-      "Developed and deployed an AI solution that saves 10 minutes daily for over 100 employees, significantly boosting productivity.",
-      "Created a generative AI product that ensures GDPR SLAs, serving over 800 users.",
+      "Developed and deployed an AI enabled OCR solution (using Azure Document Intelligence) that saves ~10 minutes daily for over 50+ employees, significantly boosting productivity.",
+      "Created a generative AI, RAG chat application that ensures GDPR SLAs, serving over 800 users.",
       "Operated within a lean, 'startup-like' AI team of three, building and deploying products for a 1000+ employee company.",
       "Fine-tuned a custom LLM for seamless natural language to SQL (NL2SQL) conversion, streamlining enterprise data interaction.",
       "Engineered a plug-and-play AI pipeline using LangGraph to support modular database integration as LLM knowledge bases.",
       "Built a plug-and-play fine-tuning framework specific to company hardware to finetune any supported open-source LLM (e.g., Mistral, LLaMA) using structured datasets in a defined schema.",
       "Gained deep hands-on experience in both backend pipeline engineering and AI product lifecycle design.",
-      "Developing Dockerfiles and images for the deployment of AI products."
+      "Partnered with operational stakeholders to translate complex financial workflows into technical requirements for LLM and NLP automations, streamlining the accounting lifecycle."
     ],
-    technologies: ["LangGraph", "LangChain", "Ollama", "Transformers", "LoRA", "QLoRA", "Unsloth", "Python", "SQL", "Docker", "AKS"]
+    technologies: ["LangGraph", "LangChain", "Ollama", "Transformers", "LoRA", "QLoRA", "Unsloth", "Python", "SQL", "Azure AKS", "Azure Document Intelligence"]
   },
   {
     title: "AI/ML Intern",
@@ -47,10 +48,10 @@ const experiences: Experience[] = [
     company: "Reliance Industries Limited",
     period: "Jun - Jul'23",
     description: [
-      "Developed DCMS (Data Center Management Service), an employee portal using HTML, CSS, and MySQL.",
-      "Optimized database queries and integrated several .NET APIs for enhanced functionality and performance."
+      "Engineered the backend for the Data Center Management Service (DCMS), utilizing MySQL for high-volume data storage.",
+      "Integrated RESTful APIs (.NET) and optimized complex SQL queries, enhancing data retrieval speeds for internal tooling."
     ],
-    technologies: ["HTML", "CSS", "MySQL", ".NET"]
+    technologies: ["MySQL", ".NET", "RESTful APIs", "SQL"]
   }
 ];
 
@@ -115,9 +116,8 @@ const Experience: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Timeline dot */}
                 <motion.div
@@ -128,17 +128,14 @@ const Experience: React.FC = () => {
                 />
 
                 {/* Thread connectors */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-primary-color/50 to-transparent ${
-                  index % 2 === 0 ? 'top-full' : 'bottom-full'
-                }`}></div>
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-transparent to-primary-color/50 ${
-                  index % 2 === 0 ? 'bottom-full' : 'top-full'
-                }`}></div>
+                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-primary-color/50 to-transparent ${index % 2 === 0 ? 'top-full' : 'bottom-full'
+                  }`}></div>
+                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-transparent to-primary-color/50 ${index % 2 === 0 ? 'bottom-full' : 'top-full'
+                  }`}></div>
 
                 {/* Content */}
-                <div className={`w-full md:w-1/2 ${
-                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
-                }`}>
+                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+                  }`}>
                   <motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
                     className="glass-effect-premium rounded-2xl p-8 shadow-xl"

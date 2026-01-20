@@ -139,9 +139,9 @@ const Certifications: React.FC = () => {
               viewport={{ once: true }}
               className="glass-effect-premium rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
-              <a 
-                href={cert.link} 
-                target="_blank" 
+              <a
+                href={cert.link}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block h-full"
               >
