@@ -23,8 +23,8 @@ const About: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-primary-color mx-auto"></div>
+          <h2 className="section-title">About Me</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -35,8 +35,8 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="glass-effect rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
+            <div className="glass-effect-premium rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Who I Am</h3>
               <p className="text-gray-600 mb-4">
                 I live in that sweet spot where AI, product, and chaos meet. I've built everything from RAG systems that actually work (not just sound fancy in decks) to scalable pipelines running on cloud infra that doesn't randomly catch fire. I think like a builder, move like a founding engineer, and talk like a PM who actually knows what's under the hood.
               </p>
@@ -79,8 +79,8 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="glass-effect rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Skills</h3>
+            <div className="glass-effect-premium rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Skills</h3>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
                   <div key={skill.name}>
@@ -99,8 +99,8 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="glass-effect rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Education</h3>
+            <div className="glass-effect-premium rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Education</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-full bg-primary-color/10 flex items-center justify-center flex-shrink-0">

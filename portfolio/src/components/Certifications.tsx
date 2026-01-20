@@ -125,8 +125,8 @@ const Certifications: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Certifications</h2>
-          <div className="w-20 h-1 bg-primary-color mx-auto"></div>
+          <h2 className="section-title">Certifications</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -137,7 +137,7 @@ const Certifications: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+              className="glass-effect-premium rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <a 
                 href={cert.link} 
