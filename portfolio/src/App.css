@@ -1,103 +1,78 @@
-.blob {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-  border-radius: 10%;
-  filter: blur(50px);
-  opacity: 1;
-  z-index: -1;
-  animation: blobMove 25s infinite ease-in-out;
-}
-
-.blob:nth-child(1) {
-  top: -200px;
-  left: -200px;
-  animation-delay: 0s;
-  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-  animation: blobMove1 25s infinite ease-in-out;
-}
-
-.blob:nth-child(2) {
-  bottom: -200px;
-  right: -200px;
-  animation-delay: -5s;
-  background: linear-gradient(45deg, #4ecdc4, #45b7af);
-  animation: blobMove2 25s infinite ease-in-out;
-}
-
-.blob:nth-child(3) {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: -10s;
-  background: linear-gradient(45deg, #ffd93d, #ffb800);
-  animation: blobMove3 25s infinite ease-in-out;
-}
-
-@keyframes blobMove1 {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    filter: blur(50px) hue-rotate(0deg);
-  }
-  25% {
-    transform: translate(150px, 150px) scale(1.3) rotate(90deg);
-    filter: blur(50px) hue-rotate(90deg);
+/* Paper-craft idle animations */
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(0px);
   }
   50% {
-    transform: translate(0, 300px) scale(0.9) rotate(180deg);
-    filter: blur(50px) hue-rotate(180deg);
-  }
-  75% {
-    transform: translate(-150px, 150px) scale(1.3) rotate(270deg);
-    filter: blur(50px) hue-rotate(270deg);
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(360deg);
-    filter: blur(50px) hue-rotate(360deg);
+    transform: translateY(-4px);
   }
 }
 
-@keyframes blobMove2 {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(360deg);
-    filter: blur(50px) hue-rotate(0deg);
-  }
-  25% {
-    transform: translate(-200px, 100px) scale(1.2) rotate(270deg);
-    filter: blur(50px) hue-rotate(90deg);
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
   }
   50% {
-    transform: translate(100px, -200px) scale(0.8) rotate(180deg);
-    filter: blur(50px) hue-rotate(180deg);
-  }
-  75% {
-    transform: translate(-100px, 200px) scale(1.2) rotate(90deg);
-    filter: blur(50px) hue-rotate(270deg);
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    filter: blur(50px) hue-rotate(360deg);
+    opacity: 0.7;
   }
 }
 
-@keyframes blobMove3 {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(180deg);
-    filter: blur(50px) hue-rotate(0deg);
+@keyframes blink-cursor {
+  0%, 49% {
+    opacity: 1;
   }
-  25% {
-    transform: translate(200px, -150px) scale(1.4) rotate(90deg);
-    filter: blur(50px) hue-rotate(90deg);
+  50%, 100% {
+    opacity: 0;
   }
-  50% {
-    transform: translate(-150px, 200px) scale(0.7) rotate(0deg);
-    filter: blur(50px) hue-rotate(180deg);
+}
+
+/* Pop-up element animations */
+@keyframes popUp {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
   }
-  75% {
-    transform: translate(150px, -200px) scale(1.4) rotate(270deg);
-    filter: blur(50px) hue-rotate(270deg);
+  to {
+    transform: scaleY(1);
+    opacity: 1;
   }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Paper texture and styling */
+.book-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.paper-element {
+  will-change: transform;
+}
+
+.contact-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
   100% {
     transform: translate(0, 0) scale(1) rotate(180deg);
     filter: blur(50px) hue-rotate(360deg);

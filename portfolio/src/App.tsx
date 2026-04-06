@@ -1,7 +1,7 @@
 import React from 'react';
 import { Analytics } from "@vercel/analytics/react";
 import Header from './components/Header';
-import Hero from './components/Hero';
+import PopUpBook from './components/PopUpBook';
 import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -11,12 +11,11 @@ import Certifications from './components/Certifications';
 
 const App: React.FC = () => {
   return (
-    <div className="relative min-h-screen">
-      <AnimatedBackground />
+    <div className="relative min-h-screen" style={{ background: '#f7f5f0' }}>
       <div className="relative z-10">
         <Header />
         <main>
-          <Hero />
+          <PopUpBook />
           <About />
           <Projects />
           <Experience />

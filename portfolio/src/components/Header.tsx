@@ -14,11 +14,10 @@ const Header: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { title: 'Home', link: 'hero' },
+    { title: 'Home', link: 'about' },
     { title: 'About', link: 'about' },
     { title: 'Projects', link: 'projects' },
     { title: 'Experience', link: 'experience' },
-    { title: 'Certifications', link: 'certifications' },
     { title: 'Contact', link: 'contact' },
   ];
 
@@ -26,36 +25,26 @@ const Header: React.FC = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4' : 'py-6'
-      }`}
+      className="fixed w-full z-50 transition-all duration-300"
       style={{
         background: isScrolled
-          ? 'rgba(255, 255, 255, 0.5)'
+          ? 'rgba(247, 245, 240, 0.9)'
           : 'transparent',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none',
       }}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between py-6">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient cursor-pointer relative group"
+            className="text-2xl font-serif font-bold text-kraft-dark cursor-pointer"
             onClick={() => {
-              const heroSection = document.getElementById('hero');
-              if (heroSection) {
-                heroSection.scrollIntoView({ behavior: 'smooth' });
-              }
+              const target = document.getElementById('about');
+              if (target) target.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <span className="relative z-10">hrishk</span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              initial={false}
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
+            hk
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -65,10 +54,13 @@ const Header: React.FC = () => {
                 key={item.link}
                 href={`#${item.link}`}
                 whileHover={{ y: -2 }}
-                className="text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 transition-colors duration-300 relative group"
+                className="text-kraft-medium font-sans text-sm transition-colors duration-300 relative group hover:text-kraft-dark"
               >
                 {item.title}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                <span
+                  className="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+                  style={{ background: '#c9b89a' }}
+                ></span>
               </motion.a>
             ))}
           </nav>
@@ -76,7 +68,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
-            className="md:hidden text-gray-600 hover:text-primary-color transition-colors duration-300"
+            className="md:hidden text-kraft-dark transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
@@ -111,7 +103,11 @@ const Header: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden absolute left-0 right-0 top-full bg-white/95 backdrop-blur-md shadow-lg rounded-b-lg"
+              className="md:hidden absolute left-0 right-0 top-full shadow-paper-lg rounded-b-lg"
+              style={{
+                background: 'rgba(250, 246, 240, 0.95)',
+                backdropFilter: 'blur(10px)',
+              }}
             >
               <nav className="flex flex-col space-y-4 p-4">
                 {menuItems.map((item) => (
@@ -119,7 +115,7 @@ const Header: React.FC = () => {
                     key={item.link}
                     href={`#${item.link}`}
                     whileHover={{ x: 10 }}
-                    className="text-gray-600 hover:text-primary-color transition-colors duration-300 py-2"
+                    className="text-kraft-medium hover:text-kraft-dark transition-colors duration-300 py-2 font-sans text-sm"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.title}

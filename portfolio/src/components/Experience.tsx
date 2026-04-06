@@ -56,7 +56,7 @@ const experiences: Experience[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
+    <section id="experience" className="py-20 relative overflow-hidden" style={{ background: '#f7f5f0' }}>
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,47 +65,16 @@ const Experience: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Work Experience</h2>
-          <div className="w-20 h-1 bg-primary-color mx-auto"></div>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-kraft-dark mb-4">Work Experience</h2>
+          <div className="w-24 h-1 mx-auto" style={{ background: '#c9b89a' }}></div>
         </motion.div>
 
         <div className="relative">
-          {/* Decorative weaving lines */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path
-                d="M0,20 Q25,0 50,20 T100,20"
-                stroke="rgba(var(--primary-color-rgb), 0.1)"
-                strokeWidth="0.5"
-                fill="none"
-                className="animate-draw"
-              />
-              <path
-                d="M0,40 Q75,20 100,40"
-                stroke="rgba(var(--primary-color-rgb), 0.1)"
-                strokeWidth="0.5"
-                fill="none"
-                className="animate-draw"
-              />
-              <path
-                d="M0,60 Q25,80 50,60 T100,60"
-                stroke="rgba(var(--primary-color-rgb), 0.1)"
-                strokeWidth="0.5"
-                fill="none"
-                className="animate-draw"
-              />
-              <path
-                d="M0,80 Q75,60 100,80"
-                stroke="rgba(var(--primary-color-rgb), 0.1)"
-                strokeWidth="0.5"
-                fill="none"
-                className="animate-draw"
-              />
-            </svg>
-          </div>
-
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
+          <div
+            className="absolute left-1/2 transform -translate-x-1/2 h-full w-1"
+            style={{ background: '#c9b89a' }}
+          ></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -120,35 +89,45 @@ const Experience: React.FC = () => {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-color rounded-full z-10 shadow-lg"></div>
-
-                {/* Thread connectors */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-primary-color/50 to-transparent ${
-                  index % 2 === 0 ? 'top-full' : 'bottom-full'
-                }`}></div>
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-transparent to-primary-color/50 ${
-                  index % 2 === 0 ? 'bottom-full' : 'top-full'
-                }`}></div>
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full z-10 shadow-paper"
+                  style={{
+                    background: '#c9b89a',
+                    border: '3px solid #f7f5f0',
+                  }}
+                ></div>
 
                 {/* Content */}
-                <div className={`w-full md:w-1/2 ${
-                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
-                }`}>
-                  <div className="glass-effect rounded-2xl p-8 shadow-xl bg-white/80 backdrop-blur-sm">
+                <div
+                  className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
+                >
+                  <div
+                    className="shadow-paper-lg rounded-lg p-8"
+                    style={{
+                      background: '#faf6f0',
+                      border: '2px solid #c9b89a',
+                    }}
+                  >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{exp.title}</h3>
-                        <p className="text-xl text-primary-color font-medium">{exp.company}</p>
+                        <h3 className="text-2xl font-serif font-semibold text-kraft-dark mb-2">{exp.title}</h3>
+                        <p className="text-lg font-mono text-kraft-medium">{exp.company}</p>
                       </div>
                       <div className="mt-4 md:mt-0">
-                        <span className="px-4 py-2 bg-primary-color/15 text-primary-color rounded-full text-sm font-semibold">
+                        <span
+                          className="px-4 py-2 rounded text-sm font-mono"
+                          style={{
+                            background: '#e8dcc4',
+                            color: '#3d2e20',
+                          }}
+                        >
                           {exp.period}
                         </span>
                       </div>
                     </div>
 
                     <div className="space-y-4">
-                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                      <ul className="space-y-2 text-kraft-medium font-sans text-sm">
                         {exp.description.map((item, i) => (
                           <motion.li
                             key={i}
@@ -156,8 +135,10 @@ const Experience: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             viewport={{ once: true }}
+                            className="flex items-start"
                           >
-                            {item}
+                            <span className="mr-3 text-kraft-dark">•</span>
+                            <span>{item}</span>
                           </motion.li>
                         ))}
                       </ul>
@@ -170,7 +151,11 @@ const Experience: React.FC = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.3, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm font-medium shadow-sm"
+                            className="px-3 py-1 rounded text-xs font-mono shadow-paper"
+                            style={{
+                              background: '#e8dcc4',
+                              color: '#3d2e20',
+                            }}
                           >
                             {tech}
                           </motion.span>

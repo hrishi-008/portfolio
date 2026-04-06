@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:wght@400&family=Instrument+Sans:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,13 @@
   }
   
   body {
-    @apply text-gray-800 antialiased;
+    @apply text-kraft-dark antialiased;
+    background-color: #f7f5f0;
+    font-family: 'Instrument Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 }
 
@@ -22,6 +28,28 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-kraft-dark to-kraft-medium;
+  }
+
+  /* Paper-craft shadow utilities */
+  .shadow-paper {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-paper-lg {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .shadow-paper-xl {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Paper-cut stroke utility */
+  .stroke-kraft {
+    stroke: #5a4535;
+  }
+
+  .stroke-kraft-light {
+    stroke: #c9b89a;
   }
 } 
